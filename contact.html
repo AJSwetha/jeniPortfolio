@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ContactUs</title>
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+<div id="contactBody">   
+ <h2>Contact</h2>   
+<div id="mainContainer">
+    
+<div class="imgSection">
+   <img src="Images/contactimg.webp">
+</div>
+
+<div class="formSection"> 
+    <form  onsubmit="return submitForm()">
+    <h1>Here</h1>
+    <div>
+    <input type="text" id="name" placeholder="Your Name">
+    </div>
+    <span id="alertName"></span>
+    <div>
+    <input type="email" id="email" placeholder="Mail ID"></div>
+    <span id="alertEmail"></span>
+    <div>
+    <textarea id="message" placeholder="Your Message"></textarea></div>
+    <span id="alertMsg"></span>
+
+    <div><button type="submit">Submit</button> 
+    </form>
+</div>
+</div> 
+</div>
+<script>
+  function submitForm(){
+    let Name=document.getElementById("name").value;
+    let Email=document.getElementById("email").value;
+    let Message=document.getElementById("message").value;
+    let Result=true;
+
+    if(Name===""){
+        document.getElementById("alertName").innerHTML="* Kindly Fill Your Name";
+        Result=false;
+    }
+    else{
+        document.getElementById("alertName").innerHTML="";
+    }
+    if(Email===""){
+        document.getElementById("alertEmail").innerHTML="* Kindly Fill Your Email";
+        Result=false;
+    }
+    else{
+        document.getElementById("alertEmail").innerHTML="";
+    }
+    if(Message===""){
+        document.getElementById("alertMsg").innerHTML="* Kindly Fill Your Msg";
+        Result=false;
+    }
+    else{
+        document.getElementById("alertMsg").innerHTML="";
+    }
+      console.log("Name:", Name);
+      console.log("Email:", Email);
+      console.log("Message:", Message);
+    return false;
+  }
+</script>   
+</body>
+</html>
